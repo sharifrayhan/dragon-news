@@ -47,8 +47,15 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end flex gap-2">
+      <label tabIndex={0} className="btn btn-ghost btn-circle">
+        <div className="indicator">
+          <img src="https://i.ibb.co/dtYDFK7/user.png" alt="" />
+        </div>
+      </label>
+        <Link>
+        <button className="btn">Log In</button>
+        </Link>
       </div>
     </div>
   );
