@@ -5,6 +5,7 @@ import Rootpage from "../pages/Rootpage";
 import About from "../pages/About";
 import Career from "../pages/Career";
 import Login from "../pages/Login";
+import Register from  "../pages/Register";
 
 
   const router = createBrowserRouter([
@@ -28,7 +29,11 @@ import Login from "../pages/Login";
         {
           path: "/Login",
           element: <Login></Login>,
-      }
+      },
+      {
+        path: "/Register",
+        element: <Register></Register>,
+    }
         ],
 
     },
