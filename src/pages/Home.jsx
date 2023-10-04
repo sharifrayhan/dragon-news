@@ -8,7 +8,7 @@ import Banner from '../components/Banner';
 
 const Home = () => {
     return (
-        <div>
+        <div className='max-w-6xl mx-auto'>
             <Header></Header>
             <Banner></Banner>
             <Navbar></Navbar>

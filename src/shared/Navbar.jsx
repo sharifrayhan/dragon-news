@@ -5,7 +5,7 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <Link to="./">Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
         <Link to="./About">About</Link>
@@ -17,7 +17,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 my-2">
+    <div className="navbar bg-transparent my-2  ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -53,8 +53,8 @@ const Navbar = () => {
           <img src="https://i.ibb.co/dtYDFK7/user.png" alt="" />
         </div>
       </label>
-        <Link>
-        <button className="btn">Log In</button>
+        <Link to='/Login'>
+        <button className="btn bg-[#403F3F] text-white">Log In</button>
         </Link>
       </div>
     </div>
