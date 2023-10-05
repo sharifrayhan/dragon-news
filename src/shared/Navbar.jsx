@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import {  Link } from "react-router-dom";
+import { AuthContext } from "../context/context";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+
+  const {user, logOut} = useContext(AuthContext)
+
+  const handleLogOut = () =>{
+    logOut()
+  }
+
   const navLinks = (
     <>
       <li>
@@ -53,9 +62,14 @@ const Navbar = () => {
           <img src="https://i.ibb.co/dtYDFK7/user.png" alt="" />
         </div>
       </label>
-        <Link to='/Login'>
-        <button className="btn bg-[#403F3F] text-white">Log In</button>
-        </Link>
+  {
+    user?
+    <button onClick={handleLogOut} className="btn bg-[#403F3F] text-white">Sign Out</button>
+    :
+    <Link to='/Login'>
+    <button className="btn bg-[#403F3F] text-white">Log In</button>
+    </Link>
+  }
       </div>
     </div>
   );
