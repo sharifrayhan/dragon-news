@@ -5,8 +5,13 @@ import Leftbox from '../components/Leftbox';
 import Middlebox from '../components/Middlebox';
 import Rightbox from '../shared/Rightbox';
 import Banner from '../components/Banner';
+import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
+   
+const handleNewsCategoryinMiddlebox = () =>{
+    Middlebox.localFunction()
+}
     return (
         <div className='max-w-6xl mx-auto'>
             <Header></Header>
@@ -14,10 +19,10 @@ const Home = () => {
             <Navbar></Navbar>
             <div className=' grid grid-cols-1 md:grid-cols-4 gap-6'>
                 <div>
-                    <Leftbox></Leftbox>
+                    <Leftbox handleNewsCategoryinMiddlebox={handleNewsCategoryinMiddlebox}></Leftbox>
                 </div>
                 <div className=' col-span-2'>
-                    <Middlebox></Middlebox>
+                    <Middlebox ></Middlebox>
                 </div>
                 <div>
                     <Rightbox></Rightbox>

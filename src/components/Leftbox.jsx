@@ -1,20 +1,26 @@
-import React from 'react';
+import { useContext, useState } from 'react';
 import {  Link } from "react-router-dom";
+import { AuthContext } from '../context/context';
+// import { useLoaderData } from 'react-router-dom';
 
 const Leftbox = () => {
+    // console.log(handleNewsCategory)
+
+    
+    const {handleSearch, handleShowAllCArds} = useContext(AuthContext)
     return (
         <div>
              <div className=' mb-5'>
             <h1 className=' mb-3 font-bold text-lg'>All Category</h1>
-            <Link><button className='flex items-center gap-1 px-12 py-2  w-[270px] hover:btn focus:btn'>National News</button></Link>
-            <Link><button className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>Breaking News</button></Link>
-            <Link><button className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>Regular News</button></Link>
-            <Link><button className='flex items-center gap-1  px-12 py-2  w-[270px]  hover:btn focus:btn '>International News</button></Link>
-            <Link><button className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn '>Sports</button></Link>
-            <Link><button className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn '>Entertainment</button></Link>
-            <Link><button className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>Culture</button></Link>
-            <Link><button className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>Arts</button></Link>
-            <Link><button className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>All News</button></Link>
+            <Link><button onClick={() => handleSearch('National News')} className='flex items-center gap-1 px-12 py-2  w-[270px] hover:btn focus:btn'>National News</button></Link>
+            <Link><button onClick={() => handleSearch('Breaking News')} className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>Breaking News</button></Link>
+            <Link><button onClick={() => handleSearch('Regular News')} className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>Regular News</button></Link>
+            <Link><button onClick={() => handleSearch('International News')} className='flex items-center gap-1  px-12 py-2  w-[270px]  hover:btn focus:btn '>International News</button></Link>
+            <Link><button onClick={() => handleSearch('Sports')} className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn '>Sports</button></Link>
+            <Link><button onClick={() => handleSearch('Entertainment')} className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn '>Entertainment</button></Link>
+            <Link><button onClick={() => handleSearch('Culture')} className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>Culture</button></Link>
+            <Link><button onClick={() => handleSearch('Arts')} className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>Arts</button></Link>
+            <Link><button onClick={() => handleShowAllCArds()} className='flex items-center gap-1  px-12 py-2  w-[270px] hover:btn focus:btn'>All News</button></Link>
         </div>
 
         <div>

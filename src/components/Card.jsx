@@ -1,4 +1,5 @@
 import React from 'react';
+import {  Link } from "react-router-dom";
 
 const Card = ({card}) => {
     
@@ -36,6 +37,9 @@ const Card = ({card}) => {
                         <img className="w-4  avatar" src="https://i.ibb.co/TMJKvdr/eye-black-fill-icon.png" alt="" />
                         <p>{card?.views}</p>
                     </div>
+                </div>
+                <div>
+                    <Link to={`/Details/${card?.id}`}><button className='btn btn-error'>Read More</button></Link>
                 </div>
 
 

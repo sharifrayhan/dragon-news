@@ -1,11 +1,10 @@
-import React from 'react';
 
-const Errorpage = () => {
+const ErrorPage = () => {
     return (
-        <div>
-            
-        </div>
+            <div className=" h-screen flex flex-col items-center gap-3">
+                    <img className=" w-[600px]" src="https://i.ibb.co/zNBzS7Y/error.jpg" alt="" />
+                </div>
     );
 };
 
-export default Errorpage;
+export default ErrorPage;

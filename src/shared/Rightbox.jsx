@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {  Link } from "react-router-dom";
+import { AuthContext } from '../context/context';
 
 
 
 const Rightbox = () => {
+
+    const {googleSignIn} = useContext(AuthContext)
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result=>{
+            console.log(result.user);
+           
+
+        })
+        .catch(error=>{
+            console.error(error)
+        })
+
+    }
     return (
     <div >
         <div className=' mb-5'>
             <h1 className=' mb-3 font-bold text-lg'>Login with</h1>
-            <Link><button className='flex mb-2 items-center gap-1 rounded-md px-12 py-2 w-[270px] border-[1px] border-black'><img className="w-5 rounded-full avatar" src="https://i.ibb.co/wMJtbrm/google-icon.png" alt="" />Login with Google</button></Link>
+            <Link><button onClick={handleGoogleSignIn} className='flex mb-2 items-center gap-1 rounded-md px-12 py-2 w-[270px] border-[1px] border-black'><img className="w-5 rounded-full avatar" src="https://i.ibb.co/wMJtbrm/google-icon.png" alt="" />Login with Google</button></Link>
             <Link><button className='flex items-center gap-1 rounded-md px-12 py-2 border-[1px] w-[270px] border-black'><img className="w-5 rounded-full avatar" src="https://i.ibb.co/ykq1q6D/github-circle-icon.png" alt="" />Login with Github</button></Link>
         </div>
 
